@@ -1,0 +1,29 @@
+<div class="footer-block information">
+            <div class="title">
+                <strong>Information</strong>
+            </div>           
+            <ul class="list">
+                <li *ngIf="foot.SitemapEnabled"><a>Sitemap</a></li>
+                <li *ngFor="let topic of foot.Topics"><a>{{topic.Name}}</a></li>
+                <li><a>ContactUs</a></li>
+            </ul>
+</div>
+
+<div class="footer-block customer-service">
+            <div class="title">
+                <strong>CustomerService</strong>
+            </div>
+            <ul class="list">
+                <li><a>Search</a></li>
+                <li *ngIf="foot.NewsEnabled"><a>News</a></li>                
+                <li *ngIf="foot.BlogEnabled"><a>Blog</a></li>
+                <li *ngIf="foot.ForumEnabled"><a>Forums</a></li>
+                <li *ngIf="foot.RecentlyViewedProductsEnabled"><a>Recently Viewed Products</a></li>
+                <li *ngIf="foot.CompareProductsEnabled"><a>Compare product list</a></li>
+                <li *ngIf="foot.NewProductsEnabled"><a>New Products</a></li>
+                <li *ngFor="let topic of foot.Topics | columnFilter: 'IncludeInFooterColumn2'">
+                    <a>{{topic.Name}}</a>
+                </li>
+            </ul>
+</div>
+

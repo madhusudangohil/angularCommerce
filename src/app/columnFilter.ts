@@ -4,8 +4,7 @@ import { Topic } from './topic';
     name: 'columnFilter'
 })
 export class ColumnFilterPipe implements PipeTransform {
-    transform(items: Topic [], columnName: string): any {
-        console.log(items[0][columnName]);
+    transform(items: Topic [], columnName: string): any {        
       return items.filter(t => t[columnName]);
     }
 }

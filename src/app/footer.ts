@@ -1,13 +1,22 @@
 import {Topic} from './topic'
 
-export interface Footer {
-    StoreName: string;
-    SitemapEnabled: boolean;
-    NewsEnabled: boolean;
-    BlogEnabled: boolean;
-    ForumEnabled: boolean;
-    RecentlyViewedProducts: boolean;
-    CompareProductsEnabled: boolean;
-    NewProducts: boolean;
-    Topics: Topic[];
+export class Footer {
+   
+   constructor(
+    Url: string,
+    StoreName: string,
+    WishlistEnabled: boolean,
+    ShoppingCartEnabled: boolean,
+    SitemapEnabled: boolean,
+    NewsEnabled: boolean,
+    BlogEnabled: boolean,
+    CompareProductsEnabled: boolean,
+    ForumEnabled: boolean,
+    RecentlyViewedProducts: boolean,
+    NewProductsEnabled: boolean,
+    AllowCustomersToApplyForVendorAccount: boolean,
+    Topics: Topic[],
+    CustomProperties: Object,
+       ){}
+
 }

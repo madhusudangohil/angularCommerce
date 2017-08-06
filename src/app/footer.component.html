@@ -1,3 +1,4 @@
+<div *ngIf="isDataLoaded">
 <div class="footer-block information">
             <div class="title">
                 <strong>Information</strong>
@@ -8,7 +9,6 @@
                 <li><a>ContactUs</a></li>
             </ul>
 </div>
-
 <div class="footer-block customer-service">
             <div class="title">
                 <strong>CustomerService</strong>
@@ -20,10 +20,28 @@
                 <li *ngIf="foot.ForumEnabled"><a>Forums</a></li>
                 <li *ngIf="foot.RecentlyViewedProductsEnabled"><a>Recently Viewed Products</a></li>
                 <li *ngIf="foot.CompareProductsEnabled"><a>Compare product list</a></li>
-                <li *ngIf="foot.NewProductsEnabled"><a>New Products</a></li>
+                <li *ngIf="foot.NewProductsEnabled"><a>New Products</a></li>               
                 <li *ngFor="let topic of foot.Topics | columnFilter: 'IncludeInFooterColumn2'">
                     <a>{{topic.Name}}</a>
                 </li>
             </ul>
 </div>
 
+<div *ngIf="isDataLoaded" class="footer-block my-account">
+            <div class="title">
+                My Account
+            </div>
+            <ul class="list">
+               <li><a>My Account</a></li>
+               <li><a>Orders</a></li>
+               <li><a>Addresses</a></li>              
+               <li *ngIf="foot.ShoppingCartEnabled"><a>Shopping Cart</a></li>
+               <li *ngIf="foot.WishlistEnabled"><a>Wish list</a></li>
+               <li *ngIf="foot.AllowCustomersToApplyForVendorAccount"><a>Vendor account</a></li>
+               <li *ngFor="let topic of foot.Topics | columnFilter: 'IncludeInFooterColumn3'">
+                    <a>{{topic.Name}}</a>
+                </li>
+            </ul>
+
+</div>
+</div>

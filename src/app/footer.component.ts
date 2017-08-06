@@ -12,18 +12,20 @@ import {Topic } from './topic';
   providers: [CommonService]
 })
 export class FooterComponent implements OnInit {
-  foot: Footer;  
+  foot: Footer;
+  isDataLoaded : boolean;
   constructor(private commonService: CommonService){}
 
-  ngOnInit(): void {
-    console.log("Footer Init");
+  ngOnInit() {
+    console.log("Footer Initialization");
     this.commonService
-        .getFooter()
+        .getFooter()        
         .subscribe(f=> 
           { 
-              this.foot = f; 
-              //this.topics = this.foot.Topics; 
-              console.log(f)
+              this.foot = f;
+              this.isDataLoaded = true;
+              console.log(this.foot.AllowCustomersToApplyForVendorAccount)
+              console.log(this.foot);
           });
   }
 }

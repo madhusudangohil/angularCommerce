@@ -1,5 +1,7 @@
 export class Topic {
-    Name: string;
-    IncludeInFooterColumn2: boolean;
+    constructor (
+    Name: string,
+    IncludeInFooterColumn2: boolean,
+    IncludeInFooterColumn3: boolean){}
 }
 

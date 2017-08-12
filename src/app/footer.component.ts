@@ -6,7 +6,7 @@ import {Topic } from './topic';
 
 @Component({
   moduleId: module.id,
-  selector: 'footer',
+  selector: 'foot',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'],
   providers: [CommonService]
@@ -23,8 +23,7 @@ export class FooterComponent implements OnInit {
         .subscribe(f=> 
           { 
               this.foot = f;
-              this.isDataLoaded = true;
-              console.log(this.foot.AllowCustomersToApplyForVendorAccount)
+              this.isDataLoaded = true;             
               console.log(this.foot);
           });
   }

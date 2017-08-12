@@ -14,43 +14,33 @@ export class CommonService {
 
   getFooter() : Observable<Footer>{
     console.log('inside service')
-    return this.http.get('http://localhost:15536/api/commonApi/footer')
+    return this.http.get('http://localhost:15536/common/footer')
           .map(r => {
             console.log(r);
             return r.json() as Footer});
-          /*.map(({AllowCustomersToApplyForVendorAccount,
-            BlogEnabled,
-    CompareProductsEnabled,
-    CustomProperties,
-    ForumEnabled,    
-    NewProductsEnabled,
-    NewsEnabled,
-    RecentlyViewedProducts,    
-    ShoppingCartEnabled,
-    SitemapEnabled,
-    StoreName,
-    Topics,
-    Url,
-    WishlistEnabled} ) => {
-            Topics = Topics.map(t=> new Topic(t.Name, t.IncludeInFooterColumn2, t.IncludeInFooterColumn3))
-            return new Footer(AllowCustomersToApplyForVendorAccount,
-            BlogEnabled,
-    CompareProductsEnabled,
-    CustomProperties,
-    ForumEnabled,    
-    NewProductsEnabled,
-    NewsEnabled,
-    RecentlyViewedProducts,    
-    ShoppingCartEnabled,
-    SitemapEnabled,
-    StoreName,
-    Topics,
-    Url,
-    WishlistEnabled);
-          });*/
-
-             //.map((r: Response) => r.json());
-    
   }
 
+  getHeaderLinks() {
+    console.log('inside headerlink service')
+    return this.http.get('http://localhost:15536/common/headerlinks')
+          .map(r => {
+            console.log(r);
+            return r.json()});
+  }
+
+ getCurrencies() {
+    console.log('inside currency service')
+    return this.http.get('http://localhost:15536/common/currencies')
+          .map(r => {
+            console.log(r);
+            return r.json()});
+  }
+
+  getLogo(){
+    console.log('inside currency service')
+    return this.http.get('http://localhost:15536/common/logo')
+          .map(r => {
+            console.log(r);
+            return r.json()});
+  }
 }

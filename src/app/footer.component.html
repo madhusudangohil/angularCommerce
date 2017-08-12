@@ -1,3 +1,5 @@
+<div class="footer">
+<div class="footer-upper">
 <div *ngIf="isDataLoaded">
 <div class="footer-block information">
             <div class="title">
@@ -5,8 +7,8 @@
             </div>           
             <ul class="list">
                 <li *ngIf="foot.SitemapEnabled"><a>Sitemap</a></li>
-                <li *ngFor="let topic of foot.Topics"><a>{{topic.Name}}</a></li>
-                <li><a>ContactUs</a></li>
+                <li *ngFor="let topic of foot.Topics"><a [routerLink]="['/' + topic.SeName]" routerLinkActive="active"> {{topic.Name}}</a></li>
+                <li><a [routerLink]="['/contactus']" routerLinkActive="active">ContactUs</a></li>
             </ul>
 </div>
 <div class="footer-block customer-service">
@@ -43,5 +45,7 @@
                 </li>
             </ul>
 
+</div>
+</div>
 </div>
 </div>
